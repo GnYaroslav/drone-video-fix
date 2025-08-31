@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DroneVideoFix - Восстановление видео файлов с дронов</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-drone"></i>
+                <span class="logo-text" data-ru="DroneVideoFix" data-en="DroneVideoFix">DroneVideoFix</span>
+            </div>
+            <nav class="nav">
+                <a href="#services" class="nav-link" data-ru="Услуги" data-en="Services">Услуги</a>
+                <a href="#how-it-works" class="nav-link" data-ru="Как это работает" data-en="How it works">Как это работает</a>
+                <a href="#contact" class="nav-link" data-ru="Контакты" data-en="Contact">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span data-ru="Восстановление видео файлов" data-en="Video file recovery">Восстановление видео файлов</span>
+                        <br>
+                        <span data-ru="с дронов" data-en="from drones">с дронов</span>
+                    </h1>
+                    <p class="hero-subtitle" data-ru="Быстро, бесплатно, 24/7. Восстанавливаем видео, поврежденные при преждевременном выключении дрона." data-en="Fast, free, 24/7. We recover videos damaged by premature drone shutdown.">
+                        Быстро, бесплатно, 24/7. Восстанавливаем видео, поврежденные при преждевременном выключении дрона.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#upload" class="btn btn-primary" data-ru="Восстановить видео" data-en="Recover video">Восстановить видео</a>
+                        <a href="#how-it-works" class="btn btn-secondary" data-ru="Узнать больше" data-en="Learn more">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="drone-animation">
+                        <i class="fas fa-drone drone-icon"></i>
+                        <div class="video-file">
+                            <i class="fas fa-video"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title" data-ru="Наши преимущества" data-en="Our advantages">Наши преимущества</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 data-ru="Быстро" data-en="Fast">Быстро</h3>
+                        <p data-ru="Восстановление видео за несколько минут" data-en="Video recovery in minutes">Восстановление видео за несколько минут</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3 data-ru="Бесплатно" data-en="Free">Бесплатно</h3>
+                        <p data-ru="Полностью бесплатный сервис" data-en="Completely free service">Полностью бесплатный сервис</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 data-ru="24/7" data-en="24/7">24/7</h3>
+                        <p data-ru="Работаем круглосуточно" data-en="We work around the clock">Работаем круглосуточно</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="upload" class="upload">
+            <div class="container">
+                <h2 class="section-title" data-ru="Восстановить видео" data-en="Recover video">Восстановить видео</h2>
+                <div class="upload-forms">
+                    <div class="upload-form">
+                        <h3 data-ru="Загрузить поврежденный файл" data-en="Upload damaged file">Загрузить поврежденный файл</h3>
+                        <div class="file-drop-zone" id="damagedFileZone">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p data-ru="Перетащите поврежденный файл сюда или кликните для выбора" data-en="Drag damaged file here or click to select">Перетащите поврежденный файл сюда или кликните для выбора</p>
+                            <input type="file" id="damagedFile" accept="video/*" hidden>
+                        </div>
+                        <div class="file-info" id="damagedFileInfo" style="display: none;">
+                            <span class="file-name"></span>
+                            <span class="file-size"></span>
+                        </div>
+                    </div>
+
+                    <div class="upload-form">
+                        <h3 data-ru="Загрузить рабочий файл (опционально)" data-en="Upload working file (optional)">Загрузить рабочий файл (опционально)</h3>
+                        <p class="form-description" data-ru="Если у вас есть рабочий файл с того же дрона, это поможет улучшить качество восстановления" data-en="If you have a working file from the same drone, it will help improve recovery quality">
+                            Если у вас есть рабочий файл с того же дрона, это поможет улучшить качество восстановления
+                        </p>
+                        <div class="file-drop-zone" id="workingFileZone">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p data-ru="Перетащите рабочий файл сюда или кликните для выбора" data-en="Drag working file here or click to select">Перетащите рабочий файл сюда или кликните для выбора</p>
+                            <input type="file" id="workingFile" accept="video/*" hidden>
+                        </div>
+                        <div class="file-info" id="workingFileInfo" style="display: none;">
+                            <span class="file-name"></span>
+                            <span class="file-size"></span>
+                        </div>
+                    </div>
+
+                    <!-- Contact information form -->
+                    <div class="contact-info-form">
+                        <h3 data-ru="Контактная информация" data-en="Contact Information">Контактная информация</h3>
+                        <p class="form-description" data-ru="Укажите хотя бы один способ связи для отправки восстановленного видео" data-en="Provide at least one contact method to receive the recovered video">
+                            Укажите хотя бы один способ связи для отправки восстановленного видео
+                        </p>
+                        <div class="contact-fields">
+                            <div class="form-group">
+                                <label for="userEmail" data-ru="Email (опционально)" data-en="Email (optional)">Email (опционально)</label>
+                                <input type="email" id="userEmail" placeholder="your@email.com" data-ru-placeholder="your@email.com" data-en-placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="userTelegram" data-ru="Telegram (опционально)" data-en="Telegram (optional)">Telegram (опционально)</label>
+                                <input type="text" id="userTelegram" placeholder="@username" data-ru-placeholder="@username" data-en-placeholder="@username">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-actions">
+                    <button class="btn btn-primary btn-large" id="startRecovery" data-ru="Начать восстановление" data-en="Start recovery">Начать восстановление</button>
+                    
+                    <!-- File upload loader -->
+                    <div class="upload-loader" id="uploadLoader" style="display: none;">
+                        <div class="loader-spinner"></div>
+                        <p data-ru="Загружаем файл..." data-en="Uploading file...">Загружаем файл...</p>
+                    </div>
+                    
+                    <!-- Progress bar (hidden by default) -->
+                    <div class="recovery-progress" id="recoveryProgress" style="display: none;">
+                        <div class="progress-header">
+                            <h4 data-ru="Восстановление видео..." data-en="Recovering video...">Восстановление видео...</h4>
+                            <span class="progress-percentage" id="progressPercentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <div class="step-item active" data-ru="Анализ файла" data-en="File analysis">Анализ файла</div>
+                            <div class="step-item" data-ru="Восстановление" data-en="Recovery">Восстановление</div>
+                            <div class="step-item" data-ru="Проверка качества" data-en="Quality check">Проверка качества</div>
+                            <div class="step-item" data-ru="Готово" data-en="Ready">Готово</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2 class="section-title" data-ru="Как это работает" data-en="How it works">Как это работает</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3 data-ru="Загрузите файл" data-en="Upload file">Загрузите файл</h3>
+                        <p data-ru="Загрузите поврежденный видео файл с вашего дрона" data-en="Upload the damaged video file from your drone">Загрузите поврежденный видео файл с вашего дрона</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3 data-ru="Автоматический анализ" data-en="Automatic analysis">Автоматический анализ</h3>
+                        <p data-ru="Наша система проанализирует повреждения и начнет восстановление" data-en="Our system will analyze the damage and start recovery">Наша система проанализирует повреждения и начнет восстановление</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3 data-ru="Скачайте результат" data-en="Download result">Скачайте результат</h3>
+                        <p data-ru="Получите восстановленный файл через несколько минут" data-en="Get the recovered file in minutes">Получите восстановленный файл через несколько минут</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title" data-ru="Связаться с нами" data-en="Contact us">Связаться с нами</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fab fa-telegram"></i>
+                            <div>
+                                <h3 data-ru="Telegram" data-en="Telegram">Telegram</h3>
+                                <p data-ru="Основной канал связи" data-en="Main communication channel">Основной канал связи</p>
+                                <a href="https://t.me/dronevideofix" target="_blank" class="contact-link">@dronevideofix</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3 data-ru="Email" data-en="Email">Email</h3>
+                                <p data-ru="Для технических вопросов" data-en="For technical questions">Для технических вопросов</p>
+                                <a href="mailto:support@dronevideofix.com" class="contact-link">support@dronevideofix.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3 data-ru="Отправить сообщение" data-en="Send message">Отправить сообщение</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Имя" data-ru-placeholder="Имя" data-en-placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Email" data-ru-placeholder="Email" data-en-placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" placeholder="Сообщение" data-ru-placeholder="Сообщение" data-en-placeholder="Message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-ru="Отправить" data-en="Send">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-drone"></i>
+                    <span>DroneVideoFix</span>
+                </div>
+                <p class="footer-text" data-ru="Восстановление видео файлов с дронов 24/7" data-en="Drone video file recovery 24/7">
+                    Восстановление видео файлов с дронов 24/7
+                </p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DroneVideoFix. <span data-ru="Все права защищены" data-en="All rights reserved">Все права защищены</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- Success popup -->
+    <div class="success-popup" id="successPopup" style="display: none;">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="fas fa-check-circle"></i>
+                <h3 data-ru="Файл успешно загружен!" data-en="File uploaded successfully!">Файл успешно загружен!</h3>
+            </div>
+            <div class="popup-body">
+                <p data-ru="Ваш файл принят в обработку. Мы свяжемся с вами по указанным контактам, когда восстановление будет завершено." data-en="Your file has been accepted for processing. We will contact you via the provided contacts when recovery is complete.">
+                    Ваш файл принят в обработку. Мы свяжемся с вами по указанным контактам, когда восстановление будет завершено.
+                </p>
+                <div class="contact-info">
+                    <p data-ru="По всем вопросам обращайтесь в Telegram:" data-en="For any questions, contact us on Telegram:">
+                        По всем вопросам обращайтесь в Telegram:
+                    </p>
+                    <a href="https://t.me/gnatyukya" target="_blank" class="telegram-link">
+                        <i class="fab fa-telegram"></i>
+                        @gnatyukya
+                    </a>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button class="btn btn-primary" id="closePopup" data-ru="Понятно" data-en="Got it">Понятно</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
