@@ -37,6 +37,18 @@ async function sendTelegramNotification(message) {
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Правильная обработка статических файлов для Vercel
+app.use('/styles.css', (req, res) => {
+    res.setHeader('Content-Type', 'text/css');
+    res.sendFile(path.join(__dirname, 'styles.css'));
+});
+
+app.use('/script.js', (req, res) => {
+    res.setHeader('Content-Type', 'application/javascript');
+    res.sendFile(path.join(__dirname, 'script.js'));
+});
+
 app.use(express.static(__dirname));
 
 // Настройка multer для загрузки файлов (память вместо диска)
